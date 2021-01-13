@@ -12,5 +12,14 @@ Use `new` to generate your project.
 sosise new <name>
 ```
 
+## Build
+```sh
+git clone https://github.com/sosise/sosise-cli.git sosise-cli
+cd sosise-cli
+npm install
+npm run build
+./bin/sosise --help
+```
+
 ## License
 [MIT](LICENSE)
