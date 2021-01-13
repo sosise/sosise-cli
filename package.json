@@ -1,0 +1,39 @@
+{
+  "name": "sosise-cli",
+  "version": "0.0.1",
+  "description": "Sosise installer",
+  "main": "build/sosise-cli.js",
+  "keywords": [
+    "sosise",
+    "sosise-cli",
+    "sosise-installer",
+    "installer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sosise/sosise-cli"
+  },
+  "scripts": {
+    "build": "rm -rf build && tsc && rollup -c",
+    "cscheck": "./node_modules/.bin/tslint --project tsconfig.json",
+    "eccheck": "./node_modules/.bin/editorconfig-checker -exclude \"(node_modules|build)\""
+  },
+  "author": "Igor Kov",
+  "license": "MIT License",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^6.2.1",
+    "figlet": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/figlet": "^1.2.1",
+    "@types/node": "^14.14.20",
+    "editorconfig": "^0.15.3",
+    "editorconfig-checker": "^3.3.0",
+    "rollup": "^2.36.1",
+    "rollup-plugin-executable": "^1.6.2",
+    "tslint": "^6.1.3",
+    "typescript": "^4.1.3"
+  }
+}
