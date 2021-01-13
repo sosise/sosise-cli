@@ -1,6 +1,6 @@
 {
   "name": "sosise-cli",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Sosise installer",
   "main": "build/sosise-cli.js",
   "keywords": [
@@ -8,6 +8,10 @@
     "sosise-cli",
     "sosise-installer",
     "installer"
+  ],
+  "files": [
+    "build",
+    "bin"
   ],
   "repository": {
     "type": "git",
