@@ -22,4 +22,4 @@ npm run build
 ```
 
 ## License
-[MIT](LICENSE)
+[MIT](LICENSE.md)
