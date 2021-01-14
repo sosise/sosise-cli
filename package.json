@@ -1,6 +1,6 @@
 {
   "name": "sosise-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Sosise installer",
   "main": "build/sosise-cli.js",
   "keywords": [
@@ -13,6 +13,9 @@
     "build",
     "bin"
   ],
+  "bin": {
+    "sosise": "bin/sosise"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sosise/sosise-cli"
@@ -23,7 +26,7 @@
     "eccheck": "./node_modules/.bin/editorconfig-checker -exclude \"(node_modules|build)\""
   },
   "author": "Igor Kov",
-  "license": "MIT License",
+  "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
     "commander": "^6.2.1",
