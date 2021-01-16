@@ -1,4 +1,13 @@
-## Installation
+# Sosise-cli
+Is a installer for the sosise boilerplate.
+
+## What is sosise
+Sosise is a simple boilerplate built on top of different libraries like lodash, expressjs, dayjs, knex, etc. The purpose of this boilerplate is to speedup and to standardize the development process.
+
+## Documentation
+Documentation is available at https://sosise.github.io/sosise-docs
+
+## How to install the sosise-cli
 Install `sosise-cli` via `npm` or `yarn` globally.
 
 ```sh
