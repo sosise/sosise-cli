@@ -1,13 +1,16 @@
 {
   "name": "sosise-cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Sosise installer",
   "main": "build/sosise-cli.js",
   "keywords": [
     "sosise",
     "sosise-cli",
     "sosise-installer",
-    "installer"
+    "installer",
+    "framework",
+    "express",
+    "laravel"
   ],
   "files": [
     "build",
