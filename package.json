@@ -1,6 +1,6 @@
 {
   "name": "sosise-cli",
-  "version": "0.0.8",
+  "version": "0.0.13",
   "description": "Sosise installer",
   "main": "build/sosise-cli.js",
   "keywords": [

@@ -3,6 +3,7 @@ import colors from 'colors';
 import fs from 'fs';
 import figlet from 'figlet';
 import { execSync } from 'child_process';
+import path from 'path';
 
 // Specify sosise git clone path
 const gitClonePath = 'https://github.com/sosise/sosise.git';
@@ -21,7 +22,7 @@ program
         console.log(colors.green('Crafting application...'));
 
         // Initialize new project path
-        const projectPath = `${process.cwd()}/${name}`;
+        const projectPath = path.join(process.cwd(), name);
 
         // Do not proceed if project path is not empty
         if (fs.existsSync(projectPath)) {
@@ -31,7 +32,7 @@ program
 
         // Clone project
         try {
-            execSync(`git clone ${gitClonePath} ${name} &> /dev/null`, {
+            execSync(`git clone ${gitClonePath} ${name}`, {
                 encoding: 'utf-8'
             });
             console.log(colors.green('Project cloned'));
@@ -41,25 +42,25 @@ program
         }
 
         // Copy .env.example to .env
-        fs.copyFileSync(projectPath + '/.env.example', projectPath + '/.env');
+        const envPath = path.join(projectPath, '.env');
+        fs.copyFileSync(path.join(projectPath, '.env.example'), envPath);
         console.log(colors.green('Copied .env.example -> .env'));
 
         // Replace text in .env
-        const envContent = fs.readFileSync(projectPath + '/.env', 'utf-8');
+        const envContent = fs.readFileSync(envPath, 'utf-8');
         envContent.replace(/Sosise/g, name);
-        fs.writeFileSync(projectPath + '/.env', envContent);
+        fs.writeFileSync(envPath, envContent);
 
         // Remove .git folder
-        fs.rmdirSync(projectPath + '/.git', { recursive: true });
-
+        fs.rmdirSync(path.join(projectPath, '.git'), { recursive: true });
 
         try {
             // Do npm install
-            execSync(`cd ${projectPath} ; npm install --quiet `, { stdio: [0, 1, 2] });
+            execSync(`cd ${projectPath} && npm install --quiet `, { stdio: [0, 1, 2] });
             console.log(colors.green('Npm packages installed'));
 
             // Build application
-            execSync(`cd ${projectPath} ; npm run build `, { stdio: [0, 1, 2] });
+            execSync(`cd ${projectPath} && npm run build `, { stdio: [0, 1, 2] });
             console.log(colors.green('Application has been built'));
         } catch (error) {
             console.log(colors.red('Error occured during npm install, detailed information below'));
