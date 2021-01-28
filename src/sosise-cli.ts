@@ -18,7 +18,7 @@ program
     .description('Sosise installer')
     .action((name) => {
         // Output
-        console.log(colors.blue(figlet.textSync('Sosise')));
+        console.log(colors.magenta(figlet.textSync('Sosise')));
         console.log(colors.green('Crafting application...'));
 
         // Initialize new project path
@@ -70,9 +70,9 @@ program
         console.log('');
         console.log('');
         console.log('');
-        console.log(colors.blue('Your application is ready, have a nice day!'));
-        console.log(colors.blue('You now can run it now'));
-        console.log(colors.blue(`cd ${projectPath} ; npm run serve`));
+        console.log(colors.cyan('Your application is ready, have a nice day!'));
+        console.log(colors.cyan('You now can run it now'));
+        console.log(colors.cyan(`cd ${projectPath} ; npm run serve`));
         console.log('');
         console.log('');
         console.log('');
