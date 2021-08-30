@@ -52,7 +52,7 @@ program
         fs.writeFileSync(envPath, envContent);
 
         // Remove .git folder
-        fs.rmdirSync(path.join(projectPath, '.git'), { recursive: true });
+        fs.rmSync(path.join(projectPath, '.git'), { recursive: true });
 
         try {
             // Do npm install
